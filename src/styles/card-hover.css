@@ -1,0 +1,83 @@
+.menu-background {
+    background: linear-gradient(145deg, #fffaf3 0%, #fdf7ee 100%);
+    min-height: 100vh;
+    position: relative;
+}
+
+.loading-container,
+.error-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fffaf3;
+}
+
+.back-btn {
+    position: fixed;
+    top: 20px;
+    left: 25px;
+    font-size: 1.6rem;
+    color: #d97706;
+    cursor: pointer;
+    background: #fff;
+    padding: 8px 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #ffe8c6;
+    color: #b45309;
+}
+
+.menu-title {
+    color: #4a2c2a;
+    letter-spacing: 1px;
+    font-size: 2.3rem;
+}
+
+.categoria-item {
+    border: none;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categoria-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* Tarjetas de productos */
+.menu-card {
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: #ffffff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.menu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.18);
+}
+
+.image-wrapper {
+    overflow: hidden;
+    border-radius: 20px 20px 0 0;
+}
+
+.menu-card-img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.menu-card:hover .menu-card-img {
+    transform: scale(1.08);
+}

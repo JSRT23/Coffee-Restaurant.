@@ -1,0 +1,59 @@
+/* Animaciones suaves */
+.animate-fade {
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.animate-hover:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Botones de mesas */
+.mesa-btn {
+    border: 2px solid #0d6efd;
+    border-radius: 12px;
+    padding: 1rem;
+    width: 100%;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.mesa-btn:hover {
+    background-color: #e9f3ff;
+}
+
+.mesa-btn.selected {
+    background-color: #0d6efd;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Tarjetas de reservas */
+.reserva-card {
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.reserva-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Espaciado general */
+.container {
+    padding-bottom: 2rem;
+}

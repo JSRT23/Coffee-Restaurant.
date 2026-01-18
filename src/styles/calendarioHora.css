@@ -1,0 +1,14 @@
+.calendario-hoy {
+    background: #fafafa;
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.calendario-hoy .card {
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+}
+
+.calendario-hoy .card:hover {
+    transform: translateY(-3px);
+}

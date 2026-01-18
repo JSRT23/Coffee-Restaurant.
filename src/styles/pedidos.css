@@ -1,0 +1,153 @@
+.list-group-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+}
+
+.list-group-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* === MODAL DETALLE PEDIDO === */
+.pedido-modal .modal-content {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+    background-color: #ffffff;
+}
+
+.pedido-modal .modal-header {
+    border-bottom: none;
+    letter-spacing: 0.3px;
+}
+
+.pedido-modal .modal-body {
+    background: #f8fafc;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Animación para secciones */
+.pedido-modal .info-section,
+.pedido-modal .productos-section,
+.pedido-modal .total-section {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Tarjetas de producto */
+.producto-item {
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.producto-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Imágenes */
+.pedido-modal img {
+    transition: transform 0.3s ease;
+}
+
+.pedido-modal img:hover {
+    transform: scale(1.1);
+}
+
+/* Botón de cierre */
+.pedido-modal .btn-outline-secondary {
+    border-radius: 50px;
+    padding: 10px 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.pedido-modal .btn-outline-secondary:hover {
+    background-color: #343a40;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Total */
+.total-section .rounded-pill {
+    background: linear-gradient(135deg, #212529, #343a40);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Divisores */
+.pedido-modal hr {
+    border: none;
+    border-top: 1px solid #aba8a8;
+    margin: 1.5rem 0;
+    opacity: 0.8;
+}
+
+/* Animaciones suaves */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === ENCABEZADO === */
+.pedido-header {
+    border: none !important;
+    padding: 0.6rem 1.2rem !important;
+    color: #212529;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* Ajusta el área del estado y el botón de cierre */
+.pedido-header .estado-box {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-right: 2rem;
+    /* espacio para que no choque con la X */
+}
+
+.pedido-header .badge {
+    border-radius: 10px;
+    font-size: 0.85rem;
+    background: #fff !important;
+    color: #212529 !important;
+}
+
+/* Ícono del pedido */
+.pedido-header .bi {
+    color: #fff;
+}
+
+/* Colores por estado */
+.pedido-header.bg-warning .bi,
+.pedido-header.bg-info .bi,
+.pedido-header.bg-success .bi,
+.pedido-header.bg-secondary .bi,
+.pedido-header.bg-danger .bi {
+    color: #fff;
+}
+
+/* Botón de cierre */
+.pedido-modal .modal-header .btn-close {
+    filter: invert(0.5);
+    opacity: 0.8;
+    transition: 0.2s;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.pedido-modal .modal-header .btn-close:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}

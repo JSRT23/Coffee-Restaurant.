@@ -1,0 +1,14 @@
+:root {
+    --primary: #6F4E37;
+    /* café oscuro */
+    --secondary: #D4A574;
+    /* beige */
+    --accent: #A0522D;
+    /* marrón tierra */
+    --background: #FFF8F3;
+    /* crema muy claro */
+    --text: #3E2723;
+    /* café casi negro */
+    --white: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.08);
+}

@@ -1,0 +1,44 @@
+/* Fondo borroso detrás del modal */
+.modal-backdrop.show {
+    backdrop-filter: blur(8px);
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+/* Bordes redondeados y sombra suave */
+.modal-rounded .modal-content {
+    border-radius: 1.2rem;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+/* Animación suave al aparecer */
+.modal-blur {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.btn-warning:not(:disabled):hover {
+    background-color: #ffca2c !important;
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
+    transform: scale(1.02);
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-warning:disabled {
+    background-color: #f3e4a0 !important;
+    color: #6b6b6b !important;
+    opacity: 0.8;
+    cursor: not-allowed;
+}
