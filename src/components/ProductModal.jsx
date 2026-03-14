@@ -15,11 +15,20 @@ import { useCarrito } from "../context/CarritoContext";
 import Swal from "sweetalert2";
 import "../styles/modal-blur.css";
 
+/* 🔹 FORMATO PESOS COLOMBIANOS */
+const formatCOP = (value) => {
+  return new Intl.NumberFormat("es-CO", {
+    style: "currency",
+    currency: "COP",
+    minimumFractionDigits: 0,
+  }).format(value || 0);
+};
+
 export default function ProductModal({ show, onHide, data }) {
   const [qty, setQty] = useState(1);
   const { user } = useAuth();
   const isAuthenticated = !!user;
-  const { agregarAlCarrito, items = [] } = useCarrito(); // ✅ Protegemos items
+  const { agregarAlCarrito, items = [] } = useCarrito();
 
   if (!data) return null;
 
@@ -31,14 +40,13 @@ export default function ProductModal({ show, onHide, data }) {
     precio,
     sku,
     codigo_barra,
-    stock = 0, // ✅ Stock por defecto 0
+    stock = 0,
     imagen,
   } = data;
 
   const handleAdd = () => {
     if (!isAuthenticated) return;
 
-    // Ver cuántas unidades de esta variante ya están en el carrito
     const existente = items.find((item) => item.id === id);
     const cantidadExistente = existente ? existente.cantidad : 0;
 
@@ -53,7 +61,6 @@ export default function ProductModal({ show, onHide, data }) {
       return;
     }
 
-    // Agregar al carrito
     agregarAlCarrito({ ...data, cantidad: qty });
 
     Swal.fire({
@@ -123,9 +130,8 @@ export default function ProductModal({ show, onHide, data }) {
                 <Badge bg="secondary">Cód: {codigo_barra || "—"}</Badge>
               </div>
 
-              <h3 className="fw-bold text-warning mb-0">
-                ${precio ? precio.toFixed(2) : "0.00"}
-              </h3>
+              {/* 💰 PRECIO EN PESOS COLOMBIANOS */}
+              <h3 className="fw-bold text-warning mb-0">{formatCOP(precio)}</h3>
 
               <div className="d-flex align-items-center gap-3">
                 <span className="text-muted">Cantidad:</span>

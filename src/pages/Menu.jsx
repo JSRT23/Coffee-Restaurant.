@@ -14,6 +14,15 @@ const src = (path) =>
       : `http://localhost:8000${path}`
     : null;
 
+/* 🔹 FORMATO PESOS COLOMBIANOS */
+const formatCOP = (value) => {
+  return new Intl.NumberFormat("es-CO", {
+    style: "currency",
+    currency: "COP",
+    minimumFractionDigits: 0,
+  }).format(value);
+};
+
 export default function Menu() {
   const navigate = useNavigate();
   const [menu, setMenu] = useState([]);
@@ -144,7 +153,7 @@ export default function Menu() {
                                       className="fw-bold text-warning"
                                       whileHover={{ scale: 1.1 }}
                                     >
-                                      ${parseFloat(varnt.precio).toFixed(2)}
+                                      {formatCOP(varnt.precio)}
                                     </motion.span>
 
                                     <span className="badge bg-light text-dark border small">

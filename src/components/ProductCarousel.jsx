@@ -9,7 +9,7 @@ import { productosService } from "../services/productosService";
  * 🔗 URL base del backend (SIN /api para imágenes)
  */
 const BACKEND_URL = (
-  import.meta.env.VITE_API_URL || "https://planchon.pythonanywhere.com/api"
+  import.meta.env.VITE_API_URL || "https://krazz.pythonanywhere.com/api"
 ).replace("/api", "");
 
 /**
@@ -19,6 +19,17 @@ const buildImageSrc = (path) => {
   if (!path) return "/sin-imagen.jpg";
   if (path.startsWith("http")) return path;
   return `${BACKEND_URL}${path}`;
+};
+
+/**
+ * 💰 Formato moneda Colombia
+ */
+const formatCOP = (value) => {
+  return new Intl.NumberFormat("es-CO", {
+    style: "currency",
+    currency: "COP",
+    minimumFractionDigits: 0,
+  }).format(value || 0);
 };
 
 export default function ProductCarousel({ title, icon, endpoint, color }) {
@@ -124,7 +135,7 @@ export default function ProductCarousel({ title, icon, endpoint, color }) {
 
                         <div className="mt-auto d-flex justify-content-between align-items-center">
                           <span className="fw-bold text-warning fs-5">
-                            ${varnt.precio.toFixed(2)}
+                            {formatCOP(varnt.precio)}
                           </span>
 
                           <Button
